@@ -1,0 +1,7 @@
+*.onnx
+train/
+tools/
+version.json
+dist/
+venv/
+.idea/

@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "funcaptcha-challenger"
+version = "0.1.1"
+description = ""
+authors = ["Madoka <s@madokax.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+onnxruntime = "^1.16.2"
+pillow = "^10.1.0"
+requests = "^2.31.0"
+tqdm = "^4.66.1"
+loguru = "^0.7.2"
+boto3 = "^1.29.2"
+
+
+[tool.poetry.group.dev.dependencies]
+opencv-python = "^4.8.1.78"
+torch = "^2.1.1"
+torchvision = "^0.16.1"
+matplotlib = "^3.8.1"
+ultralytics = "^8.0.210"
+boto3 = "^1.29.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[[tool.poetry.packages]]
+include = "funcaptcha_challenger/*.py"
