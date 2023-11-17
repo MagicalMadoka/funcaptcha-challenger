@@ -6,10 +6,10 @@ from funcaptcha_challenger.tools import check_input_image_size, process_image, c
 
 def parse_row(row,img_width=200,img_height=200):
     xc,yc,w,h = row[:4]
-    x1 = (xc-w/2)/640*img_width
-    y1 = (yc-h/2)/640*img_height
-    x2 = (xc+w/2)/640*img_width
-    y2 = (yc+h/2)/640*img_height
+    x1 = (xc-w/2)/224*img_width
+    y1 = (yc-h/2)/224*img_height
+    x2 = (xc+w/2)/224*img_width
+    y2 = (yc+h/2)/224*img_height
     prob = row[4:].max()
     class_id = row[4:].argmax()
     label = class_id
@@ -52,15 +52,16 @@ def determine_left_right(box1, box2):
 
 class ObjectCountPredictor:
     def __init__(self):
-        self.obj_detection_model = BaseModel("match_count_object_detection.onnx")
+        self.source_detection_model = BaseModel("match_count_source_detection.onnx")
+        self.target_detection_model = BaseModel("match_count_target_detection.onnx")
         self.similarity_model = BaseModel("match_count_similarity.onnx")
 
     def predict(self, image) -> int:
         check_input_image_size(image)
 
         # todo change image size
-        target = process_image(image,(1,0),(640,640))
-        result = self._target_boxs(target)
+        target = process_image(image,(1,0),(224,224))
+        result = self._target_boxs(target,self.source_detection_model)
 
         if len(result) != 2:
             raise ValueError("predict fail")
@@ -70,6 +71,7 @@ class ObjectCountPredictor:
 
 
         source_image = crop(crop_image(image, (1, 0)),source_box)
+        source_image.show()
 
         source_image =  np.array(source_image.resize((32,32))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
@@ -77,14 +79,15 @@ class ObjectCountPredictor:
         for i in range(width // 200):
             im = crop_image(image, (0, i))
 
-            target_image = process_image(image, (0, i),(640,640))
+            target_image = process_image(image, (0, i),(224,224))
 
-            source_output = self._target_boxs(target_image)
+            source_output = self._target_boxs(target_image,self.target_detection_model)
 
             cnt = 0
             for box in source_output:
 
                 target_image = crop(im,box)
+                target_image.show()
                 target_image = np.array(target_image.resize((32,32))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
                 output = self.similarity_model.run_prediction(None, {'input_left': source_image.astype(np.float32),'input_right': target_image.astype(np.float32)})[0]
@@ -99,8 +102,8 @@ class ObjectCountPredictor:
 
 
 
-    def _target_boxs(self, target):
-        output = self.obj_detection_model.run_prediction(None, {'images': target.astype(np.float32)})[0]
+    def _target_boxs(self, target,model):
+        output = model.run_prediction(None, {'images': target.astype(np.float32)})[0]
 
         output = output.transpose()
 
