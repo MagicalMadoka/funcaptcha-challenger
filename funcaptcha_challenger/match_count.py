@@ -71,7 +71,6 @@ class ObjectCountPredictor:
 
 
         source_image = crop(crop_image(image, (1, 0)),source_box)
-        source_image.show()
 
         source_image =  np.array(source_image.resize((32,32))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
@@ -87,7 +86,6 @@ class ObjectCountPredictor:
             for box in source_output:
 
                 target_image = crop(im,box)
-                target_image.show()
                 target_image = np.array(target_image.resize((32,32))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
                 output = self.similarity_model.run_prediction(None, {'input_left': source_image.astype(np.float32),'input_right': target_image.astype(np.float32)})[0]
