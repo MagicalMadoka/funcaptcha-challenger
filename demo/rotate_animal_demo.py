@@ -7,7 +7,7 @@ from funcaptcha_challenger import predict_animal_rotation_towards_hand
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
 
-image_path = os.path.join(this_dir, 'captcha_images', '0bcc74b7-487c-4db4-8d48-7d2d2091ae23.jpg')
+image_path = os.path.join(this_dir, 'captcha_images', '0bcc74b7-487c-4db4-8d48-7d2d2091ae23_3.jpg')
 
 image = Image.open(image_path)
 
