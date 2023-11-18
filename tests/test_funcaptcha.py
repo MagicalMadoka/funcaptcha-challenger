@@ -19,13 +19,13 @@ class TestFuncaptcha(unittest.TestCase):
         self.assertEqual(index, 3)
 
     def test_predict_count_match_image_1(self):
-        image_path = os.path.join(self.image_path, '57655483f9ea8848_0.jpg')
+        image_path = os.path.join(self.image_path, '57655483f9ea8848_3.jpg')
         image = Image.open(image_path)
         index = predict_count_match_image(image)
         self.assertEqual(index, 3)
 
     def test_predict_count_match_image_2(self):
-        image_path = os.path.join(self.image_path, '318655482944f5e67_2.jpg')
+        image_path = os.path.join(self.image_path, '318655482944f5e67_4.jpg')
         image = Image.open(image_path)
         index = predict_count_match_image(image)
         self.assertEqual(index, 4)
