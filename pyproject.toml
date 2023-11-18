@@ -22,6 +22,7 @@ torchvision = "^0.16.1"
 matplotlib = "^3.8.1"
 ultralytics = "^8.0.210"
 boto3 = "^1.29.1"
+onnx = "^1.15.0"
 
 [build-system]
 requires = ["poetry-core"]

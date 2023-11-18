@@ -14,6 +14,7 @@ class BaseModel:
     def __init__(self, model_name):
         self.model_name = model_name
         self.ort_session = None
+        self.is_dev = os.getenv("HC_DEV",False)
 
     def _initialize_model(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -24,7 +25,7 @@ class BaseModel:
         if not os.path.exists(model_filename):
             logger.debug(f"model {self.model_name} not found, downloading...")
             self._download_file(model_url, model_filename)
-        else:
+        elif not self.is_dev:
             logger.debug(f"model {self.model_name} found, checking hash")
             if BaseModel.version_info is None:
                 version_json_path = os.path.join(script_dir, "version.json")

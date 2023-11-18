@@ -1,7 +1,7 @@
 import numpy as np
 
 from funcaptcha_challenger.model import BaseModel
-from funcaptcha_challenger.tools import check_input_image_size, process_image, crop_image, crop
+from funcaptcha_challenger.tools import check_input_image_size, process_image, crop_funcapctha_image, crop
 
 
 def parse_row(row,img_width=200,img_height=200):
@@ -59,7 +59,6 @@ class ObjectCountPredictor:
     def predict(self, image) -> int:
         check_input_image_size(image)
 
-        # todo change image size
         target = process_image(image,(1,0),(224,224))
         result = self._target_boxs(target,self.source_detection_model)
 
@@ -70,13 +69,12 @@ class ObjectCountPredictor:
         count = count_box[4]
 
 
-        source_image = crop(crop_image(image, (1, 0)),source_box)
-
-        source_image =  np.array(source_image.resize((32,32))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
+        source_image = crop(crop_funcapctha_image(image, (1, 0)), source_box)
+        source_image =  np.array(source_image.resize((52,52))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
         width = image.width
         for i in range(width // 200):
-            im = crop_image(image, (0, i))
+            im = crop_funcapctha_image(image, (0, i))
 
             target_image = process_image(image, (0, i),(224,224))
 
@@ -86,7 +84,9 @@ class ObjectCountPredictor:
             for box in source_output:
 
                 target_image = crop(im,box)
-                target_image = np.array(target_image.resize((32,32))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
+                target_image.show()
+
+                target_image = np.array(target_image.resize((52,52))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
                 output = self.similarity_model.run_prediction(None, {'input_left': source_image.astype(np.float32),'input_right': target_image.astype(np.float32)})[0]
 

@@ -11,7 +11,7 @@ def process_image(image, index, input_shape=(52, 52)):
     sub_image = image.crop((x, y, x + 200, y + 200)).resize(input_shape)
     return np.array(sub_image).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
-def crop_image(image, index):
+def crop_funcapctha_image(image, index):
     x, y = index[1] * 200, index[0] * 200
     return image.crop((x, y, x + 200, y + 200))
 

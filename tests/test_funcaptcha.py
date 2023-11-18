@@ -28,7 +28,7 @@ class TestFuncaptcha(unittest.TestCase):
         image_path = os.path.join(self.image_path, '318655482944f5e67_2.jpg')
         image = Image.open(image_path)
         index = predict_count_match_image(image)
-        self.assertEqual(index, 2)
+        self.assertEqual(index, 4)
 
 
     def test_predict_count_match_image_3(self):

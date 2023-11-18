@@ -5,3 +5,4 @@ version.json
 dist/
 venv/
 .idea/
+.syncthing*
