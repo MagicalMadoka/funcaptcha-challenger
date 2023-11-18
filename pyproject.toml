@@ -12,7 +12,6 @@ pillow = "^10.1.0"
 requests = "^2.31.0"
 tqdm = "^4.66.1"
 loguru = "^0.7.2"
-boto3 = "^1.29.2"
 
 
 [tool.poetry.group.dev.dependencies]
