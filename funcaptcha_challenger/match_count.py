@@ -1,7 +1,7 @@
 import numpy as np
 
 from funcaptcha_challenger.model import BaseModel
-from funcaptcha_challenger.tools import check_input_image_size, process_image, crop_funcapctha_image, crop
+from funcaptcha_challenger.tools import check_input_image_size, process_image, crop_funcaptcha_image, crop
 
 
 def parse_row(row,img_width=200,img_height=200):
@@ -69,12 +69,12 @@ class ObjectCountPredictor:
         count = count_box[4]
 
 
-        source_image = crop(crop_funcapctha_image(image, (1, 0)), source_box)
+        source_image = crop(crop_funcaptcha_image(image, (1, 0)), source_box)
         source_image =  np.array(source_image.resize((52,52))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
         width = image.width
         for i in range(width // 200):
-            im = crop_funcapctha_image(image, (0, i))
+            im = crop_funcaptcha_image(image, (0, i))
 
             target_image = process_image(image, (0, i),(224,224))
 

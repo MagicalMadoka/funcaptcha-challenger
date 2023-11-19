@@ -7,7 +7,7 @@ from funcaptcha_challenger import predict_count_match_image
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
 
-image_path = os.path.join(this_dir, 'captcha_images', '57655483f9ea8848_3.jpg')
+image_path = os.path.join(this_dir, 'captcha-images', '57655483f9ea8848_3.jpg')
 
 image = Image.open(image_path)
 
