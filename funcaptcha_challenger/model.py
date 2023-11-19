@@ -53,7 +53,10 @@ class BaseModel:
                     file.write(data)
         progress_bar.close()
         if total_size_in_bytes != 0 and progress_bar.n != total_size_in_bytes:
-            print("ERROR, something went wrong")
+            msg = ('You might be using an outdated version, using pip install --upgrade funcaptcha-challenger might '
+                   'solve the issue.')
+            logger.error(msg)
+            raise Exception(msg)
 
     def _file_sha256(self, filename):
         sha256_hash = hashlib.sha256()
