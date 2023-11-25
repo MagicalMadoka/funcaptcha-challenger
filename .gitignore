@@ -8,3 +8,4 @@ venv/
 .syncthing*
 __pycache__
 .DS_Store
+service/

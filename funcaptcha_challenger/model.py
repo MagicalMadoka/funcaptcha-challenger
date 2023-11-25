@@ -1,11 +1,14 @@
 import hashlib
 import json
 import os
+import threading
 
+import onnxruntime as ort
 import requests
 from loguru import logger
-import onnxruntime as ort
 from tqdm import tqdm
+
+auto_update = True
 
 
 class BaseModel:
@@ -14,6 +17,7 @@ class BaseModel:
     def __init__(self, model_name):
         self.model_name = model_name
         self.ort_session = None
+        self.initialization_lock = threading.Lock()
 
     def _initialize_model(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -24,7 +28,7 @@ class BaseModel:
         if not os.path.exists(model_filename):
             logger.debug(f"model {self.model_name} not found, downloading...")
             self._download_file(model_url, model_filename)
-        else:
+        elif auto_update:
             logger.debug(f"model {self.model_name} found, checking hash")
             if BaseModel.version_info is None:
                 version_json_path = os.path.join(script_dir, "version.json")
@@ -67,5 +71,7 @@ class BaseModel:
 
     def run_prediction(self, output_names, input_feed):
         if self.ort_session is None:
-            self._initialize_model()
+            with self.initialization_lock:
+                if self.ort_session is None:
+                    self._initialize_model()
         return self.ort_session.run(output_names, input_feed)
