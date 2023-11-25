@@ -2,7 +2,7 @@ import numpy as np
 
 from funcaptcha_challenger.model import BaseModel
 from funcaptcha_challenger.predictor import FuncaptchaPredictor
-from funcaptcha_challenger.tools import check_input_image_size, process_image
+from funcaptcha_challenger.tools import check_input_image_size, process_image, process_ans_image
 
 
 class HopscotchHighsecPredictor(FuncaptchaPredictor):
@@ -20,9 +20,9 @@ class HopscotchHighsecPredictor(FuncaptchaPredictor):
         max_index = -1
 
         width = image.width
+        left = process_ans_image(image)
         for i in range(width // 200):
-            left = process_image(image, (0, i))
-            right = process_image(image, (1, 0))
+            right = process_image(image, (0, i))
             prediction = self._run_prediction(left, right)
 
             prediction_value = prediction[0][0]

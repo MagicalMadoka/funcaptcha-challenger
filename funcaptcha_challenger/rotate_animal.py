@@ -19,9 +19,10 @@ class AnimalRotationPredictor:
         max_index = -1
 
         width = image.width
+        right = process_image(image, (1, 0))
         for i in range(width // 200):
+            
             left = process_image(image, (0, i))
-            right = process_image(image, (1, 0))
             prediction = self._run_prediction(left, right)
 
             prediction_value = prediction[0][0]

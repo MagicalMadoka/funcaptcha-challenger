@@ -14,9 +14,18 @@ def process_image(image, index, input_shape=(52, 52)):
     return np.array(sub_image).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
 
+def process_ans_image(image, input_shape=(52, 52)):
+    sub_image = crop_funcaptcha_ans_image(image).resize(input_shape)
+    return np.array(sub_image).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
+
+
 def crop_funcaptcha_image(image, index):
     x, y = index[1] * 200, index[0] * 200
     return image.crop((x, y, x + 200, y + 200))
+
+
+def crop_funcaptcha_ans_image(image):
+    return image.crop((0, 200, 135, 400))
 
 
 def crop_image_to_box(image, box):
