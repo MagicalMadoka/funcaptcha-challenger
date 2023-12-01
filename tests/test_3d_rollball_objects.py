@@ -11,8 +11,7 @@ class TestRotateAnimal(unittest.TestCase):
 
     def setUp(self):
         this_dir = os.path.dirname(os.path.realpath(__file__))
-        # self.images_path = os.path.join(this_dir, '../demo', 'captcha-images', '3d_rollball_objects')
-        self.images_path = os.path.join(this_dir, '../train', '3d_rollball_animals', 'data')
+        self.images_path = os.path.join(this_dir, '../demo', 'captcha-images', '3d_rollball_objects')
 
     def test_predict(self):
         images_name = os.listdir(self.images_path)
