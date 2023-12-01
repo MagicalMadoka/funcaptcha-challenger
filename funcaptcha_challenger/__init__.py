@@ -1,14 +1,12 @@
 from funcaptcha_challenger.hopscotch_highsec import HopscotchHighsecPredictor
+from funcaptcha_challenger.icon_connect import IconConnectPredictor
 from funcaptcha_challenger.match_count import ObjectCountPredictor
 from funcaptcha_challenger.rotate_animal import AnimalRotationPredictor
 
-arp = AnimalRotationPredictor()
-predict_3d_rollball_animals = arp.predict
+predict_3d_rollball_animals = AnimalRotationPredictor().predict
 
-ocp = ObjectCountPredictor()
-predict_numericalmatch = ocp.predict
+predict_numericalmatch = ObjectCountPredictor().predict
 
-phh = HopscotchHighsecPredictor()
+predict_hopscotch_highsec = HopscotchHighsecPredictor().predict
 
-predict_hopscotch_highsec = phh.predict
-
+predict_icon_connect = IconConnectPredictor().predict
