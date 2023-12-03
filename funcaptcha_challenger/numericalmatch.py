@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 
 from funcaptcha_challenger.model import BaseModel
@@ -50,11 +52,11 @@ def determine_left_right(box1, box2):
         return box2, box1
 
 
-class ObjectCountPredictor:
+class NumericalmatchPredictor:
     def __init__(self):
         self.source_detection_model = BaseModel("match_count_source_detection.onnx")
-        self.target_detection_model = BaseModel("match_count_target_detection.onnx")
-        self.similarity_model = BaseModel("match_count_similarity.onnx")
+        self.target_detection_model = BaseModel("numericalmatch_target_detection.onnx")
+        self.similarity_model = BaseModel("numericalmatch_similarity.onnx")
 
     def predict(self, image) -> int:
         check_input_image_size(image)
@@ -96,6 +98,8 @@ class ObjectCountPredictor:
 
             if cnt == count:
                 return i
+
+        return random.randint(0, width // 200)
 
     def _target_boxs(self, target, model):
         output = model.run_prediction(None, {'images': target.astype(np.float32)})[0]
