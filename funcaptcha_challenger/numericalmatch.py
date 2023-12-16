@@ -1,4 +1,5 @@
-import random
+from collections import defaultdict
+from typing import Union, Any, Optional
 
 import numpy as np
 
@@ -58,7 +59,7 @@ class NumericalmatchPredictor:
         self.target_detection_model = BaseModel("numericalmatch_target_detection.onnx")
         self.similarity_model = BaseModel("numericalmatch_similarity.onnx")
 
-    def predict(self, image) -> int:
+    def predict(self, image) -> Union[Optional[int], Any]:
         check_input_image_size(image)
 
         target = process_image(image, (1, 0), (224, 224))
@@ -74,6 +75,7 @@ class NumericalmatchPredictor:
         source_image = np.array(source_image.resize((52, 52))).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
         width = image.width
+        matches = defaultdict(list)
         for i in range(width // 200):
             im = crop_funcaptcha_image(image, (0, i))
 
@@ -94,12 +96,21 @@ class NumericalmatchPredictor:
                 prob = output[0][0]
 
                 if prob > 0.5:
-                    cnt += 1
+                    matches[i].append(prob)
 
-            if cnt == count:
-                return i
-
-        return random.randint(0, width // 200)
+        if count == 0:
+            for i in range(width // 200):
+                if i not in matches:
+                    return i
+            return None
+        else:
+            best_match = None
+            best_prob = -1
+            for i, probs in matches.items():
+                if len(probs) == count and max(probs) > best_prob:
+                    best_match = i
+                    best_prob = max(probs)
+            return best_match
 
     def _target_boxs(self, target, model):
         output = model.run_prediction(None, {'images': target.astype(np.float32)})[0]
