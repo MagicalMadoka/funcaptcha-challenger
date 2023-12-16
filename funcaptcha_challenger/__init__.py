@@ -1,3 +1,4 @@
+from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
 from funcaptcha_challenger.hopscotch_highsec import HopscotchHighsecPredictor
 from funcaptcha_challenger.numericalmatch import NumericalmatchPredictor
 from funcaptcha_challenger.rotate_animal import AnimalRotationPredictor
@@ -13,3 +14,5 @@ phh = HopscotchHighsecPredictor()
 
 predict_hopscotch_highsec = phh.predict
 predict_3d_rollball_objects = ThreeDRollballObjectsPredictor().predict
+
+predict_coordinatesmatch = CoordinatesMatchPredictor().predict
