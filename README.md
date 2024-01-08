@@ -14,6 +14,8 @@ Just `ai vs ai`
 | hopscotch_highsec   | Use the arrows to move the person to the icon indicated by the colored circle          | [hopscotch_highsec_demo](demo/hopscotch_highsec_demo.py)     |
 | icon_connect        | Using the arrows, connect the same two icons with the dotted line as shown on the left | 🚧                                                           |
 | coordinatesmatch    | Using the arrows, move the person to the indicated seat                                | [coordinatesmatch_demo](demo/coordinatesmatch_demo.py)       |
+| shadows             | Pick the wrong shadow                                                                  | [shadows_demo](demo/shadows_demo.py)                         |
+| penguin             | Pick the penguin                                                                       | [penguin_demo](demo/penguin_demo.py)                         |
 | ...                 | ...                                                                                    | 🚧                                                           |
 
 ## Installation
