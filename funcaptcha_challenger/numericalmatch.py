@@ -3,7 +3,9 @@ import random
 import numpy as np
 
 from funcaptcha_challenger.model import BaseModel
-from funcaptcha_challenger.tools import check_input_image_size, process_image, crop_funcaptcha_image, crop_image_to_box
+from funcaptcha_challenger.tools import check_image_pair_classifier_image_size, process_pair_classifier_image, \
+    crop_funcaptcha_image, \
+    crop_image_to_box
 
 
 def parse_row(row, img_width=200, img_height=200):
@@ -59,9 +61,9 @@ class NumericalmatchPredictor:
         self.similarity_model = BaseModel("numericalmatch_similarity.onnx")
 
     def predict(self, image) -> int:
-        check_input_image_size(image)
+        check_image_pair_classifier_image_size(image)
 
-        target = process_image(image, (1, 0), (224, 224))
+        target = process_pair_classifier_image(image, (1, 0), (224, 224))
         result = self._target_boxs(target, self.source_detection_model)
 
         if len(result) != 2:
@@ -77,7 +79,7 @@ class NumericalmatchPredictor:
         for i in range(width // 200):
             im = crop_funcaptcha_image(image, (0, i))
 
-            target_image = process_image(image, (0, i), (224, 224))
+            target_image = process_pair_classifier_image(image, (0, i), (224, 224))
 
             source_output = self._target_boxs(target_image, self.target_detection_model)
 
