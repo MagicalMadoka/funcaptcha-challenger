@@ -16,6 +16,7 @@ Just `ai vs ai`
 | coordinatesmatch    | Using the arrows, move the person to the indicated seat                                | [coordinatesmatch_demo](demo/coordinatesmatch_demo.py)       |
 | shadows             | Pick the wrong shadow                                                                  | [shadows_demo](demo/shadows_demo.py)                         |
 | penguin             | Pick the penguin                                                                       | [penguin_demo](demo/penguin_demo.py)                         |
+| train_coordinates   | Use the arrows to move the train to the coordinates indicated in the left image        | [train_coordinates_demo](demo/train_coordinates_demo.py)     |
 | ...                 | ...                                                                                    | 🚧                                                           |
 
 ## Installation
