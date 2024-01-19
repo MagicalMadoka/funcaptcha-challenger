@@ -1,28 +1,28 @@
 import numpy as np
 
 
-def check_input_image_size(image):
+def check_image_pair_classifier_image_size(image):
     if image.height != 400 or image.width % 200 != 0:
         raise ValueError("Image size must be (n * 200) x 400 pixels")
 
 
-def check_game_type_3_input_image_size(image):
+def check_image_classifier_image_size(image):
     if image.height != 200 or image.width != 300:
         raise ValueError("Image size must be 300 x 200 pixels")
 
 
-def process_image(image, index, input_shape=(52, 52)):
+def process_pair_classifier_image(image, index, input_shape=(52, 52)):
     x, y = index[1] * 200, index[0] * 200
     sub_image = image.crop((x, y, x + 200, y + 200)).resize(input_shape)
     return np.array(sub_image).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
 
-def process_game_type_3_image(image, index, input_shape=(52, 52)):
+def process_image_classifier_image(image, index, input_shape=(52, 52)):
     target_img = crop_funcaptcha_image(image, (index // 3, index % 3), width=100).resize(input_shape)
     return np.array(target_img).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
 
-def process_ans_image(image, input_shape=(52, 52)):
+def process_pair_classifier_ans_image(image, input_shape=(52, 52)):
     sub_image = crop_funcaptcha_ans_image(image).resize(input_shape)
     return np.array(sub_image).transpose(2, 0, 1)[np.newaxis, ...] / 255.0
 
