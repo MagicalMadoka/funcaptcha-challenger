@@ -2,4 +2,6 @@ from funcaptcha_challenger.threed_rollball_objects import ThreeDRollballObjectsP
 
 
 class ThreeDRollballAnimalPredictor(ThreeDRollballObjectsPredictor):
-    pass
+
+    def is_support(self, variant, instruction):
+        return '3d_rollball_animals' == variant
