@@ -25,6 +25,18 @@ Just `ai vs ai`
 pip install funcaptcha-challenger
 ```
 
+## Sponsors
+
+### [Capsolver](https://www.capsolver.com/)
+
+[![Capsolver](doc/sponsors.gif)](https://www.capsolver.com/)
+
+[Capsolver.com](https://www.capsolver.com/) is an AI-powered service that provides automatic captcha solving
+capabilities. It supports a range of captcha types, including reCAPTCHA, hCaptcha, and FunCaptcha, AWS Captcha, Geetest,
+Akamai Web, BMP, Imperva / Incapsula, image captcha among others. Capsolver offers both Chrome and Firefox extensions
+for ease of use, API integration for developers, and various pricing packages to suit different needs. It aims to
+facilitate seamless web automation by bypassing captcha verifications efficiently.
+
 ## Discussion
 
 - 📱 [Telegram](https://t.me/+iNf8qQk0KUpkYmEx)
