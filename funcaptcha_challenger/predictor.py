@@ -1,8 +1,6 @@
-import io
 from abc import abstractmethod, ABC
 
 import numpy as np
-from PIL import Image
 
 from funcaptcha_challenger.tools import check_image_pair_classifier_image_size, check_image_classifier_image_size, \
     process_image_classifier_image, process_pair_classifier_ans_image, process_pair_classifier_image
@@ -16,11 +14,6 @@ class FuncaptchaPredictor:
     def predict(self, image) -> int:
         self._check_input_image_size(image)
         return self._predict(image)
-
-    def predict_from_bytes(self, image_bytes) -> int:
-        image_stream = io.BytesIO(image_bytes)
-        image = Image.open(image_stream)
-        return self.predict(image)
 
     @abstractmethod
     def _check_input_image_size(self, image):
@@ -36,7 +29,7 @@ class FuncaptchaPredictor:
 
     @abstractmethod
     def is_support(self, variant, instruction):
-        pasrs
+        pass
 
 
 class ImagePairClassifierPredictor(FuncaptchaPredictor, ABC):

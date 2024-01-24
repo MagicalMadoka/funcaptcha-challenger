@@ -1,3 +1,7 @@
+import io
+
+from PIL import Image
+
 from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
 from funcaptcha_challenger.dicematch import DicematchMatchPredictor
 from funcaptcha_challenger.hopscotch_highsec import HopscotchHighsecPredictor
@@ -24,6 +28,12 @@ def predict(image, variant, instruction):
     for predictor in predictors:
         if predictor.is_support(variant, instruction):
             return predictor.predict(image)
+
+
+def predict_from_bytes(image_bytes, variant, instruction):
+    image_stream = io.BytesIO(image_bytes)
+    image = Image.open(image_stream)
+    return predict(image, variant, instruction)
 
 
 predict_numericalmatch = NumericalmatchPredictor().predict
