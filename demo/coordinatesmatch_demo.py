@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from loguru import logger
 
-from funcaptcha_challenger import predict_coordinatesmatch
+from funcaptcha_challenger import predict
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -12,5 +12,5 @@ image_path = os.path.join(this_dir, 'captcha-images', 'coordinatesmatch',
 
 image = Image.open(image_path)
 
-index = predict_coordinatesmatch(image)
+index = predict(image, 'coordinatesmatch')
 logger.info(f"Predicted index: {index}")

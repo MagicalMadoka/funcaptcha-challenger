@@ -24,7 +24,7 @@ predictors = [
 ]
 
 
-def predict(image, variant, instruction):
+def predict(image, variant, instruction=None):
     for predictor in predictors:
         if predictor.is_support(variant, instruction):
             return predictor.predict(image)
@@ -38,12 +38,12 @@ def predict_from_bytes(image_bytes, variant, instruction):
 
 predict_numericalmatch = NumericalmatchPredictor().predict
 
-predict_3d_rollball_animals = lambda image: predict(image, '3d_rollball_animals', None)
-predict_hopscotch_highsec = lambda image: predict(image, 'hopscotch_highsec', None)
-predict_3d_rollball_objects = lambda image: predict(image, '3d_rollball_objects', None)
-predict_coordinatesmatch = lambda image: predict(image, 'coordinatesmatch', None)
-predict_train_coordinates = lambda image: predict(image, 'train_coordinates', None)
-predict_dicematch = lambda image: predict(image, 'dicematch', None)
+predict_3d_rollball_animals = lambda image: predict(image, '3d_rollball_animals')
+predict_hopscotch_highsec = lambda image: predict(image, 'hopscotch_highsec')
+predict_3d_rollball_objects = lambda image: predict(image, '3d_rollball_objects')
+predict_coordinatesmatch = lambda image: predict(image, 'coordinatesmatch')
+predict_train_coordinates = lambda image: predict(image, 'train_coordinates')
+predict_dicematch = lambda image: predict(image, 'dicematch')
 
-predict_penguins = lambda image: predict(image, 'penguins', None)
-predict_shadows = lambda image: predict(image, 'shadows', None)
+predict_penguins = lambda image: predict(image, 'penguins')
+predict_shadows = lambda image: predict(image, 'shadows')
