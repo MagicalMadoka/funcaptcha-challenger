@@ -6,10 +6,10 @@ from PIL import Image
 from funcaptcha_challenger import predict
 
 
-class TestHopscotchHighsec(unittest.TestCase):
+class TestShadows(unittest.TestCase):
 
     def setUp(self):
-        self.variant = 'hopscotch_highsec'
+        self.variant = 'frankenhead'
         this_dir = os.path.dirname(os.path.realpath(__file__))
         self.images_path = os.path.join(this_dir, '../demo', 'captcha-images', self.variant)
 
