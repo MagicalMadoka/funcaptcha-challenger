@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from loguru import logger
 
-from funcaptcha_challenger import predict_shadows
+from funcaptcha_challenger import predict
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -12,5 +12,5 @@ image_path = os.path.join(this_dir, 'captcha-images', 'shadows',
 
 image = Image.open(image_path)
 
-index = predict_shadows(image)
+index = predict(image, 'shadows')
 logger.info(f"Predicted index: {index}")

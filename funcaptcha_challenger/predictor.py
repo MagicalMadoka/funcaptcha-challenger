@@ -27,6 +27,10 @@ class FuncaptchaPredictor:
     def _get_model(self):
         pass
 
+    @abstractmethod
+    def is_support(self, variant, instruction):
+        pass
+
 
 class ImagePairClassifierPredictor(FuncaptchaPredictor, ABC):
 
