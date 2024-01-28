@@ -15,7 +15,7 @@ Just `ai vs ai`
 | icon_connect        | Using the arrows, connect the same two icons with the dotted line as shown on the left | 🚧                                                           |
 | coordinatesmatch    | Using the arrows, move the person to the indicated seat                                | [coordinatesmatch_demo](demo/coordinatesmatch_demo.py)       |
 | shadows             | Pick the wrong shadow                                                                  | [shadows_demo](demo/shadows_demo.py)                         |
-| penguin             | Pick the penguin                                                                       | [penguin_demo](demo/penguin_demo.py)                         |
+| penguins            | Pick the penguin                                                                       | [penguin_demo](demo/penguins_demo.py)                        |
 | train_coordinates   | Use the arrows to move the train to the coordinates indicated in the left image        | [train_coordinates_demo](demo/train_coordinates_demo.py)     |
 | ...                 | ...                                                                                    | 🚧                                                           |
 
@@ -24,6 +24,19 @@ Just `ai vs ai`
 ```bash
 pip install funcaptcha-challenger
 ```
+
+## Sponsors
+
+### [Capsolver](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
+
+[![Capsolver](doc/sponsors.gif)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
+
+[Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is
+an AI-powered service that provides automatic captcha solving
+capabilities. It supports a range of captcha types, including reCAPTCHA, hCaptcha, and FunCaptcha, AWS Captcha, Geetest,
+Akamai Web, BMP, Imperva / Incapsula, image captcha among others. Capsolver offers both Chrome and Firefox extensions
+for ease of use, API integration for developers, and various pricing packages to suit different needs. It aims to
+facilitate seamless web automation by bypassing captcha verifications efficiently.
 
 ## Discussion
 

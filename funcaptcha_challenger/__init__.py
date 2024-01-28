@@ -6,7 +6,7 @@ from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
 from funcaptcha_challenger.dicematch import DicematchMatchPredictor
 from funcaptcha_challenger.hopscotch_highsec import HopscotchHighsecPredictor
 from funcaptcha_challenger.numericalmatch import NumericalmatchPredictor
-from funcaptcha_challenger.penguin import PenguinPredictor
+from funcaptcha_challenger.penguins import PenguinsPredictor
 from funcaptcha_challenger.shadows import ShadowsPredictor
 from funcaptcha_challenger.threed_rollball_animal import ThreeDRollballAnimalPredictor
 from funcaptcha_challenger.threed_rollball_objects import ThreeDRollballObjectsPredictor
@@ -19,7 +19,7 @@ predictors = [
     CoordinatesMatchPredictor(),
     TrainCoordinatesPredictor(),
     DicematchMatchPredictor(),
-    PenguinPredictor(),
+    PenguinsPredictor(),
     ShadowsPredictor(),
 ]
 
@@ -45,5 +45,5 @@ predict_coordinatesmatch = lambda image: predict(image, 'coordinatesmatch', None
 predict_train_coordinates = lambda image: predict(image, 'train_coordinates', None)
 predict_dicematch = lambda image: predict(image, 'dicematch', None)
 
-predict_penguin = lambda image: predict(image, 'penguin', None)
+predict_penguins = lambda image: predict(image, 'penguins', None)
 predict_shadows = lambda image: predict(image, 'shadows', None)
