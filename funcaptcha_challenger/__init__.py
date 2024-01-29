@@ -2,6 +2,7 @@ import io
 
 from PIL import Image
 
+from funcaptcha_challenger.BrokenJigsawbrokenjigsaw_swap import BrokenJigsawbrokenjigsawSwapPredictor
 from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
 from funcaptcha_challenger.dicematch import DicematchMatchPredictor
 from funcaptcha_challenger.frankenhead import FrankenheadPredictor
@@ -23,6 +24,7 @@ predictors = [
     PenguinsPredictor(),
     ShadowsPredictor(),
     FrankenheadPredictor(),
+    BrokenJigsawbrokenjigsawSwapPredictor(),
 ]
 
 
