@@ -33,11 +33,7 @@ pip install funcaptcha-challenger
 
 [![Capsolver](doc/sponsors.gif)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
 
-[Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is
-an AI-powered service that provides automatic captcha solving
-capabilities. It supports a range of captcha types, including reCAPTCHA, hCaptcha, and FunCaptcha, AWS Captcha, Geetest,
-Akamai Web, BMP, Imperva / Incapsula, image captcha among others. Capsolver offers both Chrome and Firefox extensions
-for ease of use, API integration for developers, and various pricing packages to suit different needs. It aims to
+[Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is an AI-powered service that provides automatic captcha solving capabilities. It supports a range of captcha types, including reCAPTCHA, hCaptcha, FunCaptcha, AWS Captcha, Geetest and image captcha. It aims to
 facilitate seamless web automation by bypassing captcha verifications efficiently.
 
 ## Discussion
