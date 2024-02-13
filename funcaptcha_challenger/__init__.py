@@ -4,6 +4,7 @@ from PIL import Image
 
 from funcaptcha_challenger.BrokenJigsawbrokenjigsaw_swap import BrokenJigsawbrokenjigsawSwapPredictor
 from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
+from funcaptcha_challenger.counting import CountingPredictor
 from funcaptcha_challenger.dicematch import DicematchMatchPredictor
 from funcaptcha_challenger.frankenhead import FrankenheadPredictor
 from funcaptcha_challenger.hopscotch_highsec import HopscotchHighsecPredictor
@@ -25,6 +26,7 @@ predictors = [
     ShadowsPredictor(),
     FrankenheadPredictor(),
     BrokenJigsawbrokenjigsawSwapPredictor(),
+    CountingPredictor(),
 ]
 
 
@@ -42,6 +44,7 @@ def predict_from_bytes(image_bytes, variant, instruction):
 
 predict_numericalmatch = NumericalmatchPredictor().predict
 
+# will be removed later
 predict_3d_rollball_animals = lambda image: predict(image, '3d_rollball_animals')
 predict_hopscotch_highsec = lambda image: predict(image, 'hopscotch_highsec')
 predict_3d_rollball_objects = lambda image: predict(image, '3d_rollball_objects')

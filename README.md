@@ -19,6 +19,7 @@ Just `ai vs ai`
 | shadows                       | Pick the wrong shadow                                                                  | [shadows_demo](demo/shadows_demo.py)                                             |
 | penguins                      | Pick the penguin                                                                       | [penguin_demo](demo/penguins_demo.py)                                            |
 | frankenhead                   | Select the animal with the wrong head                                                  | [frankenhead_demo](demo/frankenhead_demo.py)                                     |
+| counting                      | Pick the image where the number matches the amount of animals                          | [counting_demo](demo/counting_demo.py)                                           |
 | ...                           | ...                                                                                    | 🚧                                                                               |
 
 ## Installation
@@ -33,7 +34,9 @@ pip install funcaptcha-challenger
 
 [![Capsolver](doc/sponsors.gif)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
 
-[Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is an AI-powered service that provides automatic captcha solving capabilities. It supports a range of captcha types, including reCAPTCHA, hCaptcha, FunCaptcha, AWS Captcha, Geetest and image captcha. It aims to
+[Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is
+an AI-powered service that provides automatic captcha solving capabilities. It supports a range of captcha types,
+including reCAPTCHA, hCaptcha, FunCaptcha, AWS Captcha, Geetest and image captcha. It aims to
 facilitate seamless web automation by bypassing captcha verifications efficiently.
 
 ## Discussion
