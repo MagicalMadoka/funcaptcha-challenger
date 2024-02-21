@@ -12,3 +12,4 @@ service/
 temp/
 
 test_all*
+/model_list.json

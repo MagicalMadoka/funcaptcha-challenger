@@ -28,6 +28,55 @@ Just `ai vs ai`
 pip install funcaptcha-challenger
 ```
 
+##  Server Usage Example
+
+- **Install**:
+```bash
+pip install server/requirements.txt
+```
+- **Run**:
+```bash
+python server/main.py
+```
+
+- **Curl Request**:
+
+    Replace the image below with a base64 encoded picture.
+
+```bash
+curl --location --request POST 'http://127.0.0.1:8181/createTask' \
+--header 'Content-Type: application/json' \
+--data-raw '
+    {
+        "image": Input Image base64 encoding,
+        "variant": "3d_rollball_objects"
+    }
+}'
+```
+
+- **Response Example**:
+
+```json
+ {
+  "errorCode": "",
+  "errorId": 0,
+  "solution": {
+    "objects": [
+      4
+    ]
+  },
+  "status": "ready",
+  "taskId": "bb11d056130b5e41f3d870edfa21c6a4"
+}
+```
+
+- **Recognition instructions**:
+
+> errorId: 0 Recognition successful.\
+> objects: Corresponding recognition result\
+> Counting from 0.`"objects": [4]` \
+> Indicates that the recognition result is sequence 4.
+
 ## Sponsors
 
 ### [Capsolver](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
