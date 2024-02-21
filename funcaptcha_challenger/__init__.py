@@ -7,7 +7,9 @@ from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
 from funcaptcha_challenger.counting import CountingPredictor
 from funcaptcha_challenger.dicematch import DicematchMatchPredictor
 from funcaptcha_challenger.frankenhead import FrankenheadPredictor
+from funcaptcha_challenger.hand_number_puzzle import HandNumberPuzzlePredictor
 from funcaptcha_challenger.hopscotch_highsec import HopscotchHighsecPredictor
+from funcaptcha_challenger.knotsCrossesCircle import KnotsCrossesCirclePredictor
 from funcaptcha_challenger.numericalmatch import NumericalmatchPredictor
 from funcaptcha_challenger.penguins import PenguinsPredictor
 from funcaptcha_challenger.shadows import ShadowsPredictor
@@ -27,6 +29,8 @@ predictors = [
     FrankenheadPredictor(),
     BrokenJigsawbrokenjigsawSwapPredictor(),
     CountingPredictor(),
+    HandNumberPuzzlePredictor(),
+    KnotsCrossesCirclePredictor(),
 ]
 
 
