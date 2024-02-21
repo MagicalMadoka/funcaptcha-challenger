@@ -4,29 +4,34 @@
 
 Just `ai vs ai`
 
-## Features
+## Supported challenges
 
-| Challenge Type                | Prompt                                                                                 | Demo                                                                             |
-|-------------------------------|----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| 3d_rollball_animals           | Use the arrows to rotate the animal to face in the direction of the hand               | [3d_rollball_animals_demo](demo/3d_rollball_animals_demo.py)                     |
-| 3d_rollball_objects           | Use the arrows to rotate the object to face in the direction of the hand               | [3d_rollball_objects_demo](demo/3d_rollball_objects_demo.py)                     |
-| numericalmatch                | Use the arrows to change the number of objects until it matches the left image         | 🚧                                                                               |
-| hopscotch_highsec             | Use the arrows to move the person to the icon indicated by the colored circle          | [hopscotch_highsec_demo](demo/hopscotch_highsec_demo.py)                         |
-| icon_connect                  | Using the arrows, connect the same two icons with the dotted line as shown on the left | 🚧                                                                               |
-| coordinatesmatch              | Using the arrows, move the person to the indicated seat                                | [coordinatesmatch_demo](demo/coordinatesmatch_demo.py)                           |
-| train_coordinates             | Use the arrows to move the train to the coordinates indicated in the left image        | [train_coordinates_demo](demo/train_coordinates_demo.py)                         |
-| BrokenJigsawbrokenjigsaw_swap |                                                                                        | [BrokenJigsawbrokenjigsaw_swap_demo](demo/BrokenJigsawbrokenjigsaw_swap_demo.py) |
-| shadows                       | Pick the wrong shadow                                                                  | [shadows_demo](demo/shadows_demo.py)                                             |
-| penguins                      | Pick the penguin                                                                       | [penguin_demo](demo/penguins_demo.py)                                            |
-| frankenhead                   | Select the animal with the wrong head                                                  | [frankenhead_demo](demo/frankenhead_demo.py)                                     |
-| counting                      | Pick the image where the number matches the amount of animals                          | [counting_demo](demo/counting_demo.py)                                           |
-| ...                           | ...                                                                                    | 🚧                                                                               |
+| variant                       | instruction                                                                     |                                                                              
+|-------------------------------|---------------------------------------------------------------------------------|
+| 3d_rollball_animals           | Use the arrows to rotate the animal to face in the direction of the hand        |
+| 3d_rollball_objects           | Use the arrows to rotate the object to face in the direction of the hand        |
+| hopscotch_highsec             | Use the arrows to move the person to the icon indicated by the colored circle   |                                                                                          
+| coordinatesmatch              | Using the arrows, move the person to the indicated seat                         |       
+| train_coordinates             | Use the arrows to move the train to the coordinates indicated in the left image | 
+| BrokenJigsawbrokenjigsaw_swap |                                                                                 | 
+| shadows                       | Pick the wrong shadow                                                           |
+| penguins                      | Pick the penguin                                                                |
+| frankenhead                   | Select the animal with the wrong head                                           |
+| counting                      | Pick the image where the number matches the amount of animals                   |
+| knotsCrossesCircle            | Pick the image with 3 circles in a row in any                                   |
+| hand_number_puzzle            | Select the image where the total fingers add up to 4                            |
 
 ## Installation
 
 ```bash
 pip install funcaptcha-challenger
 ```
+
+## Usage
+
+[demo for 3d_rollball_objects](demo/3d_rollball_animals_demo.py)
+
+for more examples see [demo](demo)
 
 ## Sponsors
 

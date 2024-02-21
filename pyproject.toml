@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "funcaptcha-challenger"
-version = "0.14.1"
+version = "0.15.1"
 description = ""
 authors = ["Madoka <s@madokax.com>"]
 readme = "README.md"
@@ -12,21 +12,6 @@ pillow = "^10.1.0"
 requests = "^2.31.0"
 tqdm = "^4.66.1"
 loguru = "^0.7.2"
-
-
-[tool.poetry.group.dev.dependencies]
-opencv-python = "^4.8.1.78"
-torch = "^2.1.1"
-torchvision = "^0.16.1"
-matplotlib = "^3.8.1"
-ultralytics = "^8.0.210"
-boto3 = "^1.29.1"
-onnx = "^1.15.0"
-roboflow = "^1.1.9"
-pygithub = "^2.1.1"
-jupyter = "^1.0.0"
-fastapi = "^0.104.1"
-uvicorn = "^0.24.0.post1"
 
 
 [build-system]
