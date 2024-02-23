@@ -4,6 +4,7 @@ from PIL import Image
 
 from funcaptcha_challenger.BrokenJigsawbrokenjigsaw_swap import BrokenJigsawbrokenjigsawSwapPredictor
 from funcaptcha_challenger.card import CardPredictor
+from funcaptcha_challenger.cardistance import CardistancePredictor
 from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
 from funcaptcha_challenger.counting import CountingPredictor
 from funcaptcha_challenger.dicematch import DicematchMatchPredictor
@@ -13,6 +14,7 @@ from funcaptcha_challenger.hopscotch_highsec import HopscotchHighsecPredictor
 from funcaptcha_challenger.knotsCrossesCircle import KnotsCrossesCirclePredictor
 from funcaptcha_challenger.numericalmatch import NumericalmatchPredictor
 from funcaptcha_challenger.penguins import PenguinsPredictor
+from funcaptcha_challenger.penguins_icon import PenguinsIconPredictor
 from funcaptcha_challenger.rockstack import RockstackPredictor
 from funcaptcha_challenger.shadows import ShadowsPredictor
 from funcaptcha_challenger.threed_rollball_animal import ThreeDRollballAnimalPredictor
@@ -35,6 +37,8 @@ predictors = [
     HandNumberPuzzlePredictor(),
     KnotsCrossesCirclePredictor(),
     CardPredictor(),
+    CardistancePredictor(),
+    PenguinsIconPredictor(),
 ]
 
 
