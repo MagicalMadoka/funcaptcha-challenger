@@ -8,7 +8,8 @@
 
 ### [Capsolver](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
 
-[![Capsolver](doc/sponsors.gif)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
+
+[![Capsolver](docs/capsolver.jpg)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
 
 [Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is
 an AI-powered service that provides automatic captcha solving capabilities. It supports a range of captcha types,
