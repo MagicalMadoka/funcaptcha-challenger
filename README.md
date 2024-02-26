@@ -8,6 +8,7 @@
 
 ### [Capsolver](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
 
+
 [![Capsolver](docs/capsolver.jpg)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
 
 [Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is
