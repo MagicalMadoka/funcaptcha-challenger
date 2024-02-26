@@ -2,7 +2,19 @@
 
 ## Introduction
 
-Just `ai vs ai`
+`Funcaptcha challenger` is a free python library that provides a simple interface to solve FunCaptcha challenges.
+
+## Sponsors
+
+### [Capsolver](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
+
+[![Capsolver](doc/sponsors.gif)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
+
+[Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is
+an AI-powered service that provides automatic captcha solving capabilities. It supports a range of captcha types,
+including reCAPTCHA, hCaptcha, and FunCaptcha, AWS Captcha, Geetest, image captcha among others. Capsolver offers both
+Chrome and Firefox extensions for ease of use, API integration for developers, and various pricing packages to suit
+different needs.
 
 ## Supported challenges
 
@@ -36,17 +48,6 @@ pip install funcaptcha-challenger
 [demo for 3d_rollball_objects](demo/3d_rollball_animals_demo.py)
 
 for more examples see [demo](demo)
-
-## Sponsors
-
-### [Capsolver](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
-
-[![Capsolver](doc/sponsors.gif)](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger)
-
-[Capsolver.com](https://capsolver.com?utm_source=github&utm_medium=banner_github&utm_campaign=funcaptcha_challenger) is
-an AI-powered service that provides automatic captcha solving capabilities. It supports a range of captcha types,
-including reCAPTCHA, hCaptcha, FunCaptcha, AWS Captcha, Geetest and image captcha. It aims to
-facilitate seamless web automation by bypassing captcha verifications efficiently.
 
 ## Discussion
 
