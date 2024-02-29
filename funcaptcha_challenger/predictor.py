@@ -31,6 +31,12 @@ class FuncaptchaPredictor:
     def is_support(self, variant, instruction):
         pass
 
+    def image_color_mode(self):
+        return 'rgb'
+
+    def input_shap(self):
+        return (52, 52)
+
 
 class ImagePairClassifierPredictor(FuncaptchaPredictor, ABC):
 
@@ -42,10 +48,11 @@ class ImagePairClassifierPredictor(FuncaptchaPredictor, ABC):
         max_index = -1
 
         width = image.width
-        left = process_pair_classifier_ans_image(image)
+        left = process_pair_classifier_ans_image(image, input_shape=self.input_shap(),
+                                                 is_grayscale=self.image_color_mode() == 'gray')
         for i in range(width // 200):
 
-            right = process_pair_classifier_image(image, (0, i))
+            right = process_pair_classifier_image(image, (0, i), is_grayscale=self.image_color_mode() == 'gray')
             prediction = self._run_prediction(left, right)
 
             prediction_value = prediction[0][0]
@@ -71,7 +78,8 @@ class ImageClassifierPredictor(FuncaptchaPredictor, ABC):
         max_index = -1
 
         for i in range(6):
-            ts = process_image_classifier_image(image, i)
+            ts = process_image_classifier_image(image, i, input_shape=self.input_shap(),
+                                                is_grayscale=self.image_color_mode() == 'gray')
             prediction = self._run_prediction(ts)
             prediction_value = prediction[0][0]
             if prediction_value > max_prediction:
