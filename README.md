@@ -52,4 +52,4 @@ for more examples see [demo](demo)
 
 ## Discussion
 
-- 📱 [Telegram](https://t.me/+-mQhGgbruexmNjA1)
+- 📱 [Telegram](https://t.me/+shEEyNIEe55lN2Rl)
