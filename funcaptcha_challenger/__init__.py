@@ -5,6 +5,7 @@ from PIL import Image
 from funcaptcha_challenger.BrokenJigsawbrokenjigsaw_swap import BrokenJigsawbrokenjigsawSwapPredictor
 from funcaptcha_challenger.card import CardPredictor
 from funcaptcha_challenger.cardistance import CardistancePredictor
+from funcaptcha_challenger.conveyor import ConveyorPredictor
 from funcaptcha_challenger.coordinatesmatch import CoordinatesMatchPredictor
 from funcaptcha_challenger.counting import CountingPredictor
 from funcaptcha_challenger.dicematch import DicematchMatchPredictor
@@ -39,6 +40,7 @@ predictors = [
     CardPredictor(),
     CardistancePredictor(),
     PenguinsIconPredictor(),
+    ConveyorPredictor()
 ]
 
 
