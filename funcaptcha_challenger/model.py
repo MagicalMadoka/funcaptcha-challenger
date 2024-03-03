@@ -10,6 +10,8 @@ from tqdm import tqdm
 
 auto_update = True
 
+model_root_path = os.path.dirname(os.path.abspath(__file__))
+
 
 class BaseModel:
     version_info = None
@@ -20,8 +22,7 @@ class BaseModel:
         self.initialization_lock = threading.Lock()
 
     def _initialize_model(self):
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        model_filename = os.path.join(script_dir, self.model_name)
+        model_filename = os.path.join(model_root_path, self.model_name)
         version_url = "https://github.com/MagicalMadoka/funcaptcha-challenger/releases/download/model/version.json"
         model_url = f"https://github.com/MagicalMadoka/funcaptcha-challenger/releases/download/model/{self.model_name}"
 
@@ -31,7 +32,7 @@ class BaseModel:
         elif auto_update:
             logger.debug(f"model {self.model_name} found, checking hash")
             if BaseModel.version_info is None:
-                version_json_path = os.path.join(script_dir, "version.json")
+                version_json_path = os.path.join(model_root_path, "version.json")
                 self._download_file(version_url, version_json_path)
 
                 with open(version_json_path, "r") as file:
