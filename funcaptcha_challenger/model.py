@@ -18,17 +18,17 @@ class BaseModel:
 
     def __init__(self, model_name):
         self.model_name = model_name
-        self.ort_session = None
+        self.updated = None
         self.initialization_lock = threading.Lock()
+        self.model_filename = os.path.join(model_root_path, self.model_name)
 
     def _initialize_model(self):
-        model_filename = os.path.join(model_root_path, self.model_name)
         version_url = "https://github.com/MagicalMadoka/funcaptcha-challenger/releases/download/model/version.json"
         model_url = f"https://github.com/MagicalMadoka/funcaptcha-challenger/releases/download/model/{self.model_name}"
 
-        if not os.path.exists(model_filename):
+        if not os.path.exists(self.model_filename):
             logger.debug(f"model {self.model_name} not found, downloading...")
-            self._download_file(model_url, model_filename)
+            self._download_file(model_url, self.model_filename)
         elif auto_update:
             logger.debug(f"model {self.model_name} found, checking hash")
             if BaseModel.version_info is None:
@@ -40,11 +40,11 @@ class BaseModel:
 
             expected_hash = BaseModel.version_info[self.model_name.split(".")[0]]
 
-            if self._file_sha256(model_filename) != expected_hash:
-                logger.debug(f"model {model_filename} hash mismatch, downloading...")
-                self._download_file(model_url, model_filename)
+            if self._file_sha256(self.model_filename) != expected_hash:
+                logger.debug(f"model {self.model_filename} hash mismatch, downloading...")
+                self._download_file(model_url, self.model_filename)
 
-        self.ort_session = ort.InferenceSession(model_filename)
+        self.updated = True
 
     def _download_file(self, url, filename):
         response = requests.get(url, stream=True)
@@ -71,8 +71,10 @@ class BaseModel:
         return sha256_hash.hexdigest()
 
     def run_prediction(self, output_names, input_feed):
-        if self.ort_session is None:
+        if self.updated is None:
             with self.initialization_lock:
-                if self.ort_session is None:
+                if self.updated is None:
                     self._initialize_model()
-        return self.ort_session.run(output_names, input_feed)
+
+        ort_session = ort.InferenceSession(self.model_filename)
+        return ort_session.run(output_names, input_feed)
