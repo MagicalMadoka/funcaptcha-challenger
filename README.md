@@ -53,3 +53,9 @@ for more examples see [demo](demo)
 ## Discussion
 
 - 📱 [Telegram](https://t.me/+shEEyNIEe55lN2Rl)
+
+## Support Me
+If this project has helped you save costs or has been beneficial in any way, consider supporting it by buying me a coffee. Your donation can go a long way in helping me maintain and improve this project. Thank you for your support!
+
+- USDT-TRC20: TNU6Lecqzu6d9fVsyvMdtFsuX5PUho5wZi
+
