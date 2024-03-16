@@ -52,7 +52,8 @@ class ImagePairClassifierPredictor(FuncaptchaPredictor, ABC):
                                                  is_grayscale=self.image_color_mode() == 'gray')
         for i in range(width // 200):
 
-            right = process_pair_classifier_image(image, (0, i), is_grayscale=self.image_color_mode() == 'gray')
+            right = process_pair_classifier_image(image, (0, i), input_shape=self.input_shap(),
+                                                  is_grayscale=self.image_color_mode() == 'gray')
             prediction = self._run_prediction(left, right)
 
             prediction_value = prediction[0][0]
