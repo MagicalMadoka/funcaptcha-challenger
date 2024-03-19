@@ -44,7 +44,9 @@ class BaseModel:
                 logger.debug(f"model {model_filename} hash mismatch, downloading...")
                 self._download_file(model_url, model_filename)
 
-        self.ort_session = ort.InferenceSession(model_filename)
+        sess_options = ort.SessionOptions()
+        sess_options.enable_cpu_mem_arena = False
+        self.ort_session = ort.InferenceSession(model_filename, sess_options)
 
     def _download_file(self, url, filename):
         response = requests.get(url, stream=True)
