@@ -37,6 +37,7 @@ different needs.
 | cardistance                   | use the arrows to find the distance between the two cars that matches the left image              | 
 | penguins-icon                 | Pick the penguin                                                                                  | 
 | conveyor                      | use the arrows to pick the image where the object directly below the arrow matches the left image | 
+| unbentobjects                 | Pick the object that is not distorted                                                             | 
 
 ## Installation
 
@@ -55,7 +56,9 @@ for more examples see [demo](demo)
 - 📱 [Telegram](https://t.me/+shEEyNIEe55lN2Rl)
 
 ## Support Me
-If this project has helped you save costs or has been beneficial in any way, consider supporting it by buying me a coffee. Your donation can go a long way in helping me maintain and improve this project. Thank you for your support!
+
+If this project has helped you save costs or has been beneficial in any way, consider supporting it by buying me a
+coffee. Your donation can go a long way in helping me maintain and improve this project. Thank you for your support!
 
 - USDT-TRC20: TNU6Lecqzu6d9fVsyvMdtFsuX5PUho5wZi
 
