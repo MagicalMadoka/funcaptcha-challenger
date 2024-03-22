@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "funcaptcha-challenger"
-version = "0.17.6"
+version = "0.17.7"
 description = ""
 authors = ["Madoka <s@madokax.com>"]
 readme = "README.md"

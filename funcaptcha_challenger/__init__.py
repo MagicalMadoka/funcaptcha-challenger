@@ -20,6 +20,7 @@ from funcaptcha_challenger.shadows import ShadowsPredictor
 from funcaptcha_challenger.threed_rollball_animal import ThreeDRollballAnimalPredictor
 from funcaptcha_challenger.threed_rollball_objects import ThreeDRollballObjectsPredictor
 from funcaptcha_challenger.train_coordinates import TrainCoordinatesPredictor
+from funcaptcha_challenger.unbentobjects import UnbentobjectsPredictor
 
 predictors = [
     ThreeDRollballAnimalPredictor(),
@@ -39,7 +40,8 @@ predictors = [
     CardPredictor(),
     CardistancePredictor(),
     PenguinsIconPredictor(),
-    ConveyorPredictor()
+    ConveyorPredictor(),
+    UnbentobjectsPredictor()
 ]
 
 
